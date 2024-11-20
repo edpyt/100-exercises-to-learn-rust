@@ -26,7 +26,7 @@ impl Add for WrappingU32 {
     type Output = Self;
 
     fn add(self, rhs: Self) -> Self::Output {
-        WrappingU32::new(self.value.overflowing_add(rhs.value).0)
+        WrappingU32::new(self.value.wrapping_add(rhs.value))
     }
 }
 
