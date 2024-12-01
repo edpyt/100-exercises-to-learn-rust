@@ -2,7 +2,7 @@
 // We'll pick the concept up again in a later chapter after covering traits and
 // interior mutability.
 fn outro() -> &'static str {
-    "I have a basic understanding of __!"
+    "I have a basic understanding of destructors!"
 }
 
 #[cfg(test)]
@@ -11,6 +11,8 @@ mod tests {
 
     #[test]
     fn test_outro() {
+        let res: &str = outro();
         assert_eq!(outro(), "I have a basic understanding of destructors!");
+        drop(res);
     }
 }
